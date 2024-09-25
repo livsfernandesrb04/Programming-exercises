@@ -18,7 +18,7 @@ int main() {
     }
 
     //Concatenar com a string "Bem-vindo" com o nome
-    strcpy(boasVindas, "Bem-vindo ");
+    strcpy(boasVindas, "Bem-vindo, ");
     strcat(boasVindas, nome);
 
     printf("%s\n", boasVindas);

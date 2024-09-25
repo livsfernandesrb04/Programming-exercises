@@ -1,54 +1,74 @@
-/*Faça um algoritmo para ler uma senha, com as seguintes especificações:
-(a) Mínimo de 8 caracteres.
-(b) Pelo menos um número.
-(c) Pelo menos uma letra maiúscula.
-(d) Pelo menos uma letra minúscula.
-(e) Máximo de 100 caracteres.*/
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
 
+//Conferir se a variavel apresenta números
+char tem_numero(char a) { 
+    return (a >= '0' && a <= '9');
+}
+
+//Conferir se a variavel apresenta letra maiuscula
+char letra_maius(char a) { 
+     return (a >= 'A' && a <= 'Z');
+}
+
+//Conferir se a variavel apresenta letra minuscula
+char letra_minus(char a) { 
+    return (a >= 'a' && a <= 'z');
+}
+
 int main() {
 
     char senha[101];
-    int tamanho;
+    int tamanho, temNum, temMaius, temMinus;
 
     setlocale(LC_ALL, "Portuguese");
 
     do {
-        printf("A senha deve conter:\n No mínimo 8 caracteres e no máximo 100 caracteres.\n Pelo menos um número.\n Pelo menos uma letra maiúscula.\n Pelo menos uma letra minúscula.\n");
+        temNum = 0, temMaius = 0, temMinus = 0;
+
+        printf("A senha deve conter:\n - No mínimo 8 caracteres e no máximo 100 caracteres.\n - Pelo menos um número.\n - Pelo menos uma letra maiúscula.\n - Pelo menos uma letra minúscula.\n");
         printf("Digite a senha: \n");
         fgets(senha, 101, stdin);
-        tamanho = strlen(senha); 
-    } while (tamanho < 8); //Conferir o tamanho da variável
-    
 
-    //Conferir se a variavel apresenta números
-    for (int i = 0; i < tamanho; i++)
-    {
-        if (senha[i] == "0" || senha[i] == "1" || senha[i] == "2" || senha[i] == "3" || senha[i] == "4" || senha[i] == "5" || senha[i] == "6" || senha[i] == "7" || senha[i] == "8" || senha[i] == "9" ||)
-        {
-            break;
+        tamanho = strlen(senha);
+
+        //Remover o caractere de nova linha capturado pelo fgets
+        if (senha[tamanho - 1] == '\n') {
+            senha[tamanho - 1] = '\0';
+            tamanho--;
         }
-    }
-
-    //Conferir se a variavel apresenta letra minuscula
-    for (int i = 0; i < tamanho; i++)
-    {
-        if ('A' <= senha[i] && <= 'Z')
+        
+        //Verificar se a senha contém as especificações
+        for (int i = 0; i < tamanho; i++)
         {
+            if (tem_numero(senha[i])) temNum = 1;
+            if (letra_maius(senha[i])) temMaius = 1;
+            if (letra_minus(senha[i])) temMinus = 1;
             
         }
         
-    }
-    
+        //Exibir mensagens de erro se a senha não atender as especificações
+        if (tamanho < 8 || tamanho > 100)
+        {
+            printf("A senha deve ter entre 8 e 100 caracteres.\n");
+        }
+        if (!temNum)
+        {
+            printf("A senha deve conter pelo menos um número.\n");
+        }
+        if (!temMaius)
+        {
+            printf("A senha deve conter pelo menos uma letra maiúscula.\n");
+        }
+        if (!temMinus)
+        {
+            printf("A senha deve conter pelo menos uma letra minúscula.\n");
+        }
+         
+    } while (tamanho < 8 || tamanho > 100 || !temNum || !temMaius || !temMinus);
 
-    //Conferir se a variavel apresenta letra maiuscula
-    for (int i = 0; i < tamanho; i++)
-    {
-        
-    }
-    
+    printf("Sua senha foi registrada com sucesso!\n");
 
      return 0;
 }
