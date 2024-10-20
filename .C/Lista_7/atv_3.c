@@ -2,6 +2,24 @@
 função, A conterá o valor de B e B terá o valor de A. Exiba os valores na função main*/
 #include <stdio.h>
 
-int main() {
+int trocar_valor(int a, int b){
+    int buffer;
 
+    buffer = a;
+    a = b;
+    b = buffer;
+
+    return a, b;
+}
+
+
+int main() {
+    int a, b;
+
+    printf("Insira dois números inteiros para a e b, respectivamente: ");
+    scanf("%d %d", &a, &b);
+
+    printf("Novos valores de a e b são:\na = %d\nb = %d ", trocar_valor(a, b));
+    
+    return 0;
 }
