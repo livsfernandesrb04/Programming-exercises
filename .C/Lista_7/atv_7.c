@@ -1,10 +1,24 @@
-/*Escreva uma função que dado um número real passado como parâmetro, retorne a parte inteira e a parte fracionária deste número. Escreva um programa que chama esta função.*/
 #include <stdio.h>
 
-void frac(float num, int* inteiro, float* frac){
-
+void separar_partes(float num, int *inteiro, float *frac){
+    *inteiro = (int)num;
+    *frac = num - *inteiro;
 }
 
 int main() {
 
+    float num;
+    int inteiro;
+    float frac;
+
+    printf("Insira um float: ");
+    scanf("%f", &num);
+
+    separar_partes(num, &inteiro, &frac);
+
+    printf("Número: %.2f\n", num);
+    printf("Parte inteira do número: %d\n", inteiro);
+    printf("parte fracionária do número: %.2f\n", frac);
+
+    return 0;
 }

@@ -1,4 +1,3 @@
-/*Escreva um programa que contenha duas variáveis inteiras. Compare seus endereços e exiba o maior endereço.*/
 #include <stdio.h>
 
 int main() {
@@ -6,18 +5,19 @@ int main() {
 
     int* pont_i = &i;
     int* pont_j = &j;
-    printf("%p\n", pont_i);
-    printf("%p\n", pont_i);
 
-    if (/* condition */)
-    {
-        /* code */
+    printf("Endereço de i: %p\n", pont_i);
+    printf("Endereço de j: %p\n", pont_i);
+
+    if (pont_i > pont_j) {
+        printf("O maior endereço é: %p", pont_i);
+    } 
+    else if (pont_j > pont_i){
+        printf("O maior endereço é: %p", pont_j);
+    } 
+    else {
+        printf("Os endereços são iguais.");
     }
     
-
-
-
-    printf("O maior endereço é: %")
-
     return 0;
 }
