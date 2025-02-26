@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../css"
+		},
+		{
+			"path": "../../html"
+		},
+		{
+			"path": "../../java"
+		},
+		{
+			"path": "../../javascript"
+		},
+		{
+			"name": "StartDB2024",
+			"path": "../../javascript/StartDB2024"
+		}
+	]
+}

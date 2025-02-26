@@ -1,0 +1,15 @@
+Acerca de Manipulação de Arquivos.
+ a) Explique os diferentes modos de abertura de arquivos.
+  modo "r" ou read - quando o arquivo é aberto de forma que seja possível a leitura do conteúdo do arquivo, mas não é possível fazer alterações.
+  modo "w" ou write - se o arquivo não existir ele é criado e o conteúdo salvo e se já existir o conteúdo será reescrito.
+  modo "a" ou append - quando o modo de abertura permite que seja adicionado mais conteúdo ao final do arquivo.
+  modo "r+" - permite a leitura e escrita mão não altera o conteúdo do arquivo.
+  modo "w+" - permite a leitura e escrita porém reescreve o conteúdo do arquivo.
+  modo "a+" - permite a leitura e escrita e adiciona o conteúdo no final do arquivo.
+  Ao adicionar o b é possivel realizar as ações em arquivos binários.
+  
+ b) Explique o funcionamento das funções fgets, fprintf, fread, fwrite.
+    A função fgets recebe três parametros o primeiro é onde deve ser armazenado o input, o segundo é número máximo de caracteres e o terceiro é de onde será lido. A função lê uma cadeia de caracteres
+    A função fprintf tem como objetivo de inserir um conteúdo formatado dentro dos arquivos. O primeiro argumento é o onde será armazenado, o segundo contém e o terceiro  
+    A função fread
+    A função fwrite

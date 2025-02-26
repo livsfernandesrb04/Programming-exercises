@@ -1,0 +1,12 @@
+ a) Qual o comportamento da função free?
+   A função free comunica ao sistema operacional que não é mais necessário a alocação daquele espaço de memória.
+ b) Após chamar free, o ponteiro pode ser utilizado?
+   O ponteiro não deve ser utilizado, pois não é garantido que o pedaço de memória ainda contenha o dado que foi guardada naquele espaço anteriormente.
+ c) O que causa vazamentos de memória?
+  Quando a memória não é liberada após a utilização daquele espaço alocado pelo programa causando sobrecarga da memória.
+ d) O que a instrução malloc retorna quando não consegue realizar a alocação?
+    A instrução malloc retorna o NULL ou nulo quando não consegue fazer a alocação de memória.
+ e) Explique a instrução calloc.
+  A instrução tem um argumento inicial que indica o número de elementos a serem alocados e o tamanho de cada um desses elementos.
+ f) Qual a diferença entre as instruções malloc e calloc?
+   A função malloc aloca memória mas não inicializa do zero o que pode gerar dados residuais (lixo), enquanto a função calloc pode alocar mais bloco de memória por vez além de limpar o espaço de memória antes de armazenar o dado.

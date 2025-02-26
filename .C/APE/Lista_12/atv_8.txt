@@ -1,0 +1,4 @@
+O que é um vetor?
+ Explique o funcionameno de um vetor e como ele é tratado no C.
+
+ Resposta: Um vetor é uma lista de elementos do mesmo tipo.

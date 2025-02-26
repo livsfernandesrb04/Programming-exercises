@@ -1,0 +1,18 @@
+Qual o valor de w após a execução do seguinte trecho código:
+#include <stdio.h>
+
+int main() {
+    int y = 5;
+    int z = 11;
+    int w;
+
+    w = y + z;
+    if( y > z) {
+        w = y * z;
+    }
+    printf("%d", w);
+
+    return 0;
+}
+
+A saída será 16, pois como y não é maior que z se mantém a primeira atribuição que w recebeu w = y + z.
