@@ -1,9 +1,7 @@
-/*Desenvolva um programa que solicite ao usuário quantos números ele deseja 
-inserir e, em seguida, calcule e exiba a média desses números.*/
 #include <stdio.h>
 
 int main() {
-    int quant_num, contador = 0;
+    int quant_num;
     float soma;
 
     printf("Quantos numeros deseja inserir? ");
@@ -11,20 +9,15 @@ int main() {
 
     int vetor[quant_num];
 
-    while (contador < quant_num) {
-        printf("Insira o %d numero do vetor: ", contador + 1);
-        scanf("%d", &vetor[contador]);
-        soma = vetor[contador]
-        contador++;
+    for (int i = 0; i < quant_num; i++) {
+        printf("Insira o %d numero da média: ", i + 1);
+        scanf("%d", &vetor[i]);
+        soma += vetor[i]; 
     }
     
-    
-    
+    float media = soma / (float)quant_num;
 
-    float media = soma / quant_num;
-
-
-
+    printf("A média dos números é %.2f", media);
 
     return 0;
 }
