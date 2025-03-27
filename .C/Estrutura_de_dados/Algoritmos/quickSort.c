@@ -2,11 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
+//Prótotipo de variáveis
+int trocas = 0, comparacoes = 0;
+
 //Trocar os elementos de posição
 void troca(int vetor[], int i, int j){
     int temp = vetor[i];
     vetor[i] = vetor[j];
-    vetor[j] = temp; 
+    vetor[j] = temp;
+    trocas++;
 }
 
 //Função partição
@@ -16,6 +20,7 @@ int particiona(int vetor[], int inicio, int fim){
     int pivo_indice = inicio;
 
     for(int i = inicio; i < fim; i++){
+        comparacoes++;
         if (vetor[i] <= pivo) {
             troca(vetor, i, pivo_indice);
             pivo_indice++;
@@ -45,14 +50,23 @@ void quickSort(int vetor[], int inicio, int fim){
 int main(){
     int vetor[] = {72, 34, 84, 21, 5, 16, 43, 50};
     int tam_vetor = sizeof(vetor) / sizeof(int);
+    clock_t ini, fim;
 
     srand(time(NULL));
+    trocas = 0; 
+    comparacoes = 0;
 
+    ini = clock();
     quickSort(vetor, 0, tam_vetor - 1);
+    fim = clock();
 
     for (int i = 0; i < tam_vetor; i++){
         printf("%d ", vetor[i]);
-    }
-    
+    } 
+    printf("\n");
+
+    double tempo_total = ((double) (fim - ini)) / CLOCKS_PER_SEC;
+    printf("Tempo de execução: %f segundos, %d trocas e %d comparações.\n", tempo_total, trocas, comparacoes);
+
     return 0;
 }
