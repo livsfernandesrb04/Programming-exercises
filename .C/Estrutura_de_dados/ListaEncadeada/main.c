@@ -20,7 +20,7 @@ int main() {
 
     TipoElemento valor;
     if (acessarElemento(l, 5, &valor)) {
-        printf("Elemento na posiÃ§Ã£o 5: %d\n", valor); 
+        printf("Elemento na posição 5: %d\n", valor); 
     }
 
     removerNaPosicao(l, 1); 
